@@ -17,9 +17,9 @@ def brochure():
 
     req_body = request.get_json()
 
-    text = req_body.get('description')
+    text = req_body.get('text')
     features = req_body.get('features')
-
+    
     ai_response = process_description(text, features)
 
     return json.loads(ai_response)
