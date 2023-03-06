@@ -21,7 +21,7 @@ def brochure():
 
     ai_response = process_description(text, features)
 
-    return ai_response
+    return json.loads(ai_response)
 
 @app.route('/upload', methods=['POST'])
 def upload():
@@ -33,7 +33,6 @@ def upload():
     response_text = process_text(text)
 
     response = json.loads(response_text)
-
 
     return response
 
