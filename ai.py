@@ -45,8 +45,10 @@ def process_description(text, features):
 def build_description_prompt(text, features):
     prompt = '### We have a real estate listing with the following description:\n'
 
+    prompt += text
+
     for feature in features:
-        prompt += f'Based on this listing, does the property have the feature titled {feature}?\n'
+        prompt += f'{feature}?\n'
 
     prompt += 'Respond with a JSON object containing the {Feature Title} as the key, and {True / False} as the value.\n'
     prompt += '###'
