@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-
+from flask_cors import CORS
 from werkzeug.utils import secure_filename
 import json
 
@@ -9,6 +9,7 @@ from pdf import extract_text
 from ai import process_text, process_description
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route('/description', methods=['POST'])

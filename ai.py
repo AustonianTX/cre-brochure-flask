@@ -26,6 +26,7 @@ def build_prompt(text):
     return prompt
 
 
+## Handles the entire PDF
 def process_text(text):
     prompt = build_prompt(text)
 
@@ -33,6 +34,7 @@ def process_text(text):
 
     return llm(prompt)
 
+## Handles the text description
 def process_description(text, features):
     prompt = build_description_prompt(text, features)
 
