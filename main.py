@@ -11,11 +11,6 @@ from ai import process_text, process_description
 app = Flask(__name__)
 
 
-@app.route('/', methods=['GET', 'POST'])
-def index():
-    return jsonify({"Choo Choo": "Panda Express"})
-
-
 @app.route('/description', methods=['POST'])
 def brochure():
 
@@ -42,6 +37,11 @@ def upload():
 
     return response
 
+
+
+@app.route('/', methods=['GET'])
+def index():
+    return jsonify({"Choo Choo": "Pizza Express"})
 
 if __name__ == '__main__':
     app.run(debug=True, port=os.getenv("PORT", default=5000))
