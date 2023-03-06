@@ -39,8 +39,6 @@ def upload():
 
     response = json.loads(response_text)
 
-    uploaded_file.save(
-        f'uploads/{secure_filename(response.get("address"))}.pdf')
 
     return response
 
