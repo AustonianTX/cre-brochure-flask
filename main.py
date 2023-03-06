@@ -11,9 +11,9 @@ from ai import process_text, process_description
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
-    return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
+    return jsonify({"Choo Choo": "Panda Express"})
 
 
 @app.route('/description', methods=['POST'])
